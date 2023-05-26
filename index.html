@@ -1,45 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
-<html>
     <head>
-        <title>el socio</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>el socio - A learners matching collaborative platform</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="app.js" defer></script>
+        <link rel="icon" type="image/x-icon" href="favicon.png">
+        <!--
+        dark theme
         <meta name="theme-color" content="#000000" />
         <meta name="color-scheme" content="dark light">
-        <link rel="stylesheet" href="styles.css">
+        -->
     </head>
+
     <body>
-        <div class="nav-wrapper">
-            <button class="btn-wallet">connect wallet</button>
-            <a href="proposal.html"><button class="btn-add">///</button></a>
-        </div>
-        <div class="main">
-            <h2>Learners matching collaborative platform</h2>
-            <p>Partner up with other learners and start building while improving your skills</p>
-                <button class="bttns-search">Design</button>
-                <button class="bttns-search">Frontend</button>
-                <button class="bttns-search">Backend</button>
-                <button class="bttns-search">Marketing</button>
-                <button class="bttns-search">Analytics</button>
-                <button class="bttns-search">Data</button>
-                <button class="bttns-search">Smart Contract Engineer</button>
-            <div class="container-wrapper">
-                <div class="container">
-                    <div>Address: {wave.address}</div>
-                    <div>Time: {wave.timestamp.toString()}</div>
-                    <div>I'm on a learning path to become: {wave.message}</div>
-                    <div>I've got an idea to build: {wave.message}</div>
-                    <div>I'm looking for: {wave.message}</div>
-                </div>
-            </div>
-            <div class="container-wrapper">
-                <div class="container">
-                    <div>Address: {wave.address}</div>
-                    <div>Time: {wave.timestamp.toString()}</div>
-                    <div>I'm on a learning path to become: {wave.message}</div>
-                    <div>I've got an idea to build: {wave.message}</div>
-                    <div>I'm looking for: {wave.message}</div>
-                </div>
+        <div class="header">
+            <a href="index.html" class="logo"></a>
+            <div class="header-right">
+                <!--
+                <a href="launch.html"><button class="bttn-launch">Launch</button></a>
+                -->
+                <!-- Trigger/Open The Modal -->
+                <button id="button-launch">Launch your idea</button>
             </div>
         </div>
+
+        <!--
+            <div class="nav-wrapper">
+                <a href="launch.html"><button class="btn-launch">Launch</button></a>
+                <button class="btn-wallet">Connect wallet</button>
+            </div>
+            <div class="main">-->
+
+        <h1>Devs-in-Training Matching Platform</h1>
+
+        <span id="text1"></span>
+        <span id="text2"></span>
+
+        <button class="filter">AI</button>
+        <button class="filter">Fintech</button>
+        <button class="filter">DeFi</button>
+        <button class="filter">Data</button>
+        <button class="filter">Blockchain</button>
+        <button class="filter">Metaverse</button>
+        <button class="filter">Robotics</button>
+
+        <div class="container-wrapper">
+            <a class="container" href="#modal1">
+                <div class="container-creator">Builder 0x296⋅⋅⋅ef2</div>
+                <h2 style="color:#FFFFFF; font-weight: bolder">Flexible AI chat bot</h2>
+                <button class="filter">AI</button>
+                <button class="filter">Robotics</button>
+            </a>
+
+        </div>
+        <!-- popup#1 - "Connect" -->
+        <div class="popup" id="modal1">
+            <a class="popup__overlay" href="#"></a>
+            <div class="popup__wrapper">
+                <a class="popup__close" href="#">&times;</a>
+                <h3>Message from creator:</h3>
+                <p>I'm at the final stage of the Web Development Bootcamp. Looking to partner up with Smart Contract Engineer to work on my project</p>
+                <button id="button-launch">Connect</button>
+            </div>
+        </div>
+
+        <div class="container-wrapper">
+            <div class="container">
+                <div class="container-creator">Creator 0x296⋅⋅⋅ef2</div>
+                <p style="color:#FFFFFF; font-weight: bolder">Idea: creator-centric decentralized socials</p>
+                <p>Looking to partner up with: UX designer</p>
+                <p>I'm on a learning path to become a: Onlyfans Feet Pics Seller</p>
+            </div>
+        </div>
+        <div class="container-wrapper">
+            <div class="container">
+                <div class="container-creator">Creator 0x296⋅⋅⋅ef2</div>
+                <p style="color:#FFFFFF; font-weight: bolder">Idea: Helping developers get unstuck</p>
+                <p>Looking to partner up with: Roofer</p>
+                <p>I'm on a learning path to become a: Carpenter</p>
+            </div>
+        </div>
+
+        <!-- Modal - "Launch button" -->
+        <div id="getModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <p>Share your idea  with other learners and turn it into a product together</p>
+                </div>
+                <div class="modal-body">
+                    
+                    <p>A short description of your idea</p>
+                    <input 
+                        class="input-none" 
+                        type="text" 
+                        placeholder="eg Zk DeFi, bridge aggregator, web3 talent marketplace"
+                        maxlength="60"
+                        required>
+                    
+                    <p>Throw in a few key words that best describe your future product</p>
+                    <input 
+                        class="input-none" 
+                        type="text" 
+                        placeholder="eg AI, Blockchain, Data, Web3"
+                        maxlength="80"
+                        required>
+                    
+                    <p>Tell your future partner(s) a bit about your current skills and what skill</p>
+                    <textarea 
+                        class="input-more" 
+                        rows="4" 
+                        cols="50"
+                        maxlength="150"
+                        required
+                        placeholder="eg I'm at the final stage of the Web Development Bootcamp. Looking to partner up with Smart Contract Engineer to work on my project"></textarea>
+                    
+                    <!--    
+                    
+                    <p>I'm looking to partner up with</p>
+                    <input class="input-none" type="text" placeholder="eg co-founder, dev, designer, technical writer">
+                    --> 
+                </div>
+                <div class="modal-footer">
+                    <button id="button-launch">Post</button>
+                    <!--<button>connect wallet</button>-->
+                </div>
+            </div>
+        </div>
+
+        <!-- popup#2
+        <a class="button" href="#modal2">Open modal 2</a>
+
+        <div class="popup" id="modal2">
+            <a class="popup__overlay" href="#"></a>
+            <div class="popup__wrapper">
+                <a class="popup__close" href="#">Close icon here</a>
+                <p>POPUP 2 : CONTENT HERE</p>
+            </div>
+        </div>
+         -->
     </body>
 </html>
